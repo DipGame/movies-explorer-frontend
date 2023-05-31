@@ -1,0 +1,21 @@
+.profile__exit {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #EE3465;
+    margin: 16px 0 70px 0;
+}
+
+.profile__exit:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 719px) {
+    .profile__exit {
+        font-size: 12px;
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,17 @@
+.project__week {
+    height: 36px;
+    overflow: hidden;
+    border: 1px ;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+#project__week_1 {
+    background: #3456F3;
+}
+
+#project__week_4 {
+    background: #F2F2F2;
+}

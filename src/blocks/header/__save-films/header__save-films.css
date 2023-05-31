@@ -1,0 +1,21 @@
+.header__save-films {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: right;
+    color: #000000;
+    margin: auto 0 auto 16px;
+}
+
+.header__save-films:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header__save-films {
+        visibility: hidden;
+        width: 0;
+    }
+}

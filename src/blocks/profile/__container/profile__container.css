@@ -1,0 +1,25 @@
+.profile__container {
+    width: 100%;
+    max-width: 410px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 123px 0 0 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.profile__container:last-of-type {
+    margin: 17px 0 0 0;
+    border: none;
+}
+
+@media (max-width: 719px) {
+    .profile__container {
+        margin-top: 80px;
+    }
+
+    .profile__container:last-of-type {
+
+    }
+}

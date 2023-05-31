@@ -1,0 +1,6 @@
+@import url(../../blocks/movie/movie.css);
+@import url(../../blocks/movie/__container/movie__container.css);
+@import url(../../blocks/movie/__img/movie__img.css);
+@import url(../../blocks/movie/__save/movie__save.css);
+@import url(../../blocks/movie/__time/movie__time.css);
+@import url(../../blocks/movie/__title/movie__title.css);

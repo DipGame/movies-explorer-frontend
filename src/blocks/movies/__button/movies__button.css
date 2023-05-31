@@ -1,0 +1,19 @@
+.movies__button {
+    width: 100%;
+    max-width: 320px;
+    height: 36px;
+    background: #F4F4F4;
+    border-radius: 6px;
+    border: none;
+}
+
+.movies__button:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 719px) {
+    .movies__button {
+        font-size: 12px;
+        max-width: 240px;
+    }
+}

@@ -1,0 +1,39 @@
+.header__signin {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    margin: auto 70px auto 0;
+    background: #3456F3;
+    border-radius: 3px;
+    height: 32px;
+    width: 76px;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.header__signin:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .header__signin {
+        margin: auto 30px auto 0;
+    }
+}
+
+@media (max-width: 719px) {
+    .header__signin {
+        margin: auto 14px auto 0;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 16px;
+    }
+}

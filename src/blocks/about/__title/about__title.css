@@ -1,0 +1,36 @@
+.about__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    color: #000000;
+    margin: 110px 0 0 70px;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .about__title {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 27px;
+        letter-spacing: -0.04em;
+        color: #000000;
+        margin: 90px 0 0 50px;
+    }
+}
+
+@media (max-width: 719px) {
+    .about__title {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.04em;
+        color: #000000;
+        margin: 70px 0 0 14px;
+    }
+}

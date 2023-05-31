@@ -1,0 +1,28 @@
+.header__account {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    margin: auto 70px auto auto;
+    background: #F4F4F4;
+    border-radius: 20px;
+    height: 32px;
+    width: 100px;
+    justify-content: center;
+}
+
+.header__account:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header__account {
+        visibility: hidden;
+        width: 0;
+    }
+}

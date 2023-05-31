@@ -1,0 +1,24 @@
+.movie {
+    width: 270px;
+    height: 218px;
+    padding: 0;
+    margin: 0 auto 0;
+    background: #FFFFFF;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media (max-width: 1276px) {
+    .movie {
+        width: 339px;
+        height: 257px;
+    }
+}
+
+@media (max-width: 719px) {
+    .movie {
+        width: 300px;
+        height: 235px;
+    }
+}

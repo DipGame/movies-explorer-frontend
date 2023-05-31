@@ -1,0 +1,15 @@
+.search__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000000;
+    margin: 0 0 0 14px;
+}
+
+@media (max-width: 719px) {
+    .search__title {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,29 @@
+.project__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    margin-top: 110px;
+    margin-left: 70px;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .project__title {
+        margin: 90px 0 23px 50px;
+    }
+}
+
+
+@media (max-width: 719px) {
+    .project__title {
+        margin: 70px 0 28px 18px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.04em;
+        color: #000000;
+    }
+}

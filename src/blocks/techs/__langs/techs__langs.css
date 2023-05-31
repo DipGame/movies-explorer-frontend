@@ -1,0 +1,14 @@
+.techs__langs {
+    display: grid;
+    max-width: 690px;
+    margin: 100px auto 0;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px 10px;
+}
+
+@media (max-width: 719px) {
+    .techs__langs {
+        margin: 50px 0 0 0;
+        width: 190px;
+    }
+}

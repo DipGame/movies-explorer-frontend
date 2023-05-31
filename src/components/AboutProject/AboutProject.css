@@ -1,0 +1,12 @@
+@import url(../../blocks/project/project.css);
+@import url(../../blocks/project/__back-week/project__back-week.css);
+@import url(../../blocks/project/__box/project__box.css);
+@import url(../../blocks/project/__container/project__container.css);
+@import url(../../blocks/project/__front-week/project__front-week.css);
+@import url(../../blocks/project/__line-time/project__line-time.css);
+@import url(../../blocks/project/__stage/project__stage.css);
+@import url(../../blocks/project/__text/project__text.css);
+@import url(../../blocks/project/__title-end/project__title-end.css);
+@import url(../../blocks/project/__title/project__title.css);
+@import url(../../blocks/project/__week/project__week.css);
+@import url(../../blocks/project/__week/_text/project__week_text.css);

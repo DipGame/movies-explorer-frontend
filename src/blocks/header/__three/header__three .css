@@ -1,0 +1,20 @@
+.header__three {
+    visibility: hidden;
+    width: 0;
+}
+
+@media (max-width: 768px) {
+    .header__three {
+        visibility: visible;
+        width: 44px;
+        object-fit: contain;
+        margin: 0 30px 0 0;
+    }
+}
+
+@media (max-width: 719px) {
+    .header__three {
+        width: 40px;
+        margin-right: 14px;
+    }
+}

@@ -1,0 +1,41 @@
+.promo__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing: -0.065em;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    max-width: 626px;
+    margin-left: 70px;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .promo__title {
+        margin: 300px auto 0;
+        text-align: center;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 52px;
+        letter-spacing: -0.04em;
+        color: #000000;
+    }
+}
+
+@media (max-width: 719px) {
+    .promo__title {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 31px;
+        line-height: 39px;
+        text-align: center;
+        letter-spacing: -0.04em;
+        color: #000000;
+        margin: 183px auto 0;
+    }
+}

@@ -1,0 +1,17 @@
+.about__box {
+    max-width: 600px;
+}
+
+.about__box:last-of-type {
+    width: 270px;
+    height: 327px;
+    padding: 0;
+    margin: auto 0;
+}
+
+@media (max-width: 719px) {
+    .about__box:last-of-type {
+        margin: auto;
+        max-width: 100%;
+    }
+}

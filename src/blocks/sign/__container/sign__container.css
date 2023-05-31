@@ -1,0 +1,19 @@
+.sign__container {
+    margin: 24px 0 0 0;
+    width: 100%;
+    max-width: 396px;
+}
+
+.sign__container:first-of-type {
+    margin-top: 40px;
+}
+
+@media (max-width: 719px) {
+    .sign__container {
+
+    }
+
+    .sign__container:first-of-type {
+       margin-top: 80px;
+    }
+}

@@ -1,0 +1,16 @@
+.sign__question {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #A0A0A0;
+    margin: 16px 0 0 0;
+}
+
+@media (max-width: 719px) {
+    .sign__question {
+        font-size: 12px;
+    }
+}

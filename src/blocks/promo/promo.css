@@ -1,0 +1,21 @@
+.promo {
+    max-width: 1280px;
+    height: 560px;
+    background: #DDDEE3;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .promo {
+        height: 844px;
+    }
+}
+
+@media (max-width: 719px) {
+    .promo {
+        height: 630px;
+    }
+}
