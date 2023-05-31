@@ -1,3 +1,7 @@
 .sign__link {
     color: #3456F3;
 }
+
+.sign__link:hover {
+    cursor: pointer;
+}
