@@ -23,7 +23,7 @@ function AboutMe() {
                     </a>
                 </div>
                 <div className='about__box'>
-                    <img className='about__img' src={myFoto} />
+                    <img className='about__img' src={myFoto} alt={'Аватар'} />
                 </div>
             </div>
             <h2 className='about__subtitle'>
