@@ -28,7 +28,7 @@ function Header(props) {
 
     return (
         <header className="header" style={{ backgroundColor: props.color, maxWidth: props.maxWidth, margin: props.marginHeader }} >
-            <img className='header__img' style={{ margin: props.marginLogo }} src={logo} onClick={props.click} alt={'Лого сайта'} />
+            <img className='header__img' style={{ margin: props.marginLogo }} src={logo} onClick={props.click} alt={'Лого'} />
             <a className={`${props.films ? 'header__films' : ''}`} onClick={goMovies}>
                 {props.films}
             </a>
@@ -44,7 +44,7 @@ function Header(props) {
             <h2 className={`${props.account ? 'header__account' : ''}`} onClick={goProfile} id={'myAccount'}  >
                 {props.account}
             </h2>
-            <img className={`${props.threeLine ? 'header__three' : ''}`} src={props.threeLine} alt={'картинка'}/>
+            <img className={`${props.threeLine ? 'header__three' : ''}`} src={props.threeLine} alt={`${props.threeLine ? 'картинка' : ''}`}/>
         </header >
     );
 }
