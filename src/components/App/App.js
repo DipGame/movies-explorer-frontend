@@ -54,7 +54,7 @@ function goSignUp() {
           />
           <Route path='/profile' element={
             <>
-              <Header click={goHome} threeLine={threeLine} films={'Фильмы'} save={'Сохраненные фильмы'} account={'Аккаунт'} color={'#FAFAFA'} />
+              <Header click={goHome} threeLine={threeLine} alt={'3 линии'} films={'Фильмы'} save={'Сохраненные фильмы'} account={'Аккаунт'} color={'#FAFAFA'} />
               <Profile />
             </>
           }

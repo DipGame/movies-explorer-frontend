@@ -44,7 +44,7 @@ function Header(props) {
             <h2 className={`${props.account ? 'header__account' : ''}`} onClick={goProfile} id={'myAccount'}  >
                 {props.account}
             </h2>
-            <img className={`${props.threeLine ? 'header__three' : ''}`} src={props.threeLine} alt={`${props.threeLine ? 'картинка' : ''}`}/>
+            <img className={`${props.threeLine ? 'header__three' : ''}`} src={props.threeLine} alt={props.alt}/>
         </header >
     );
 }
