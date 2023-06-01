@@ -1,5 +1,8 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts/fonts.css);
 
+@import url(./blocks/overlay/overlay.css);
+@import url(./blocks/overlay/_open/overlay_open.css);
+
 @import url(./components/Promo/Promo.css);
 @import url(./components/AboutProject/AboutProject.css);
