@@ -1,21 +1,25 @@
 .promo {
-    max-width: 1280px;
+    position: relative;
+    max-width: 1140px;
     height: 560px;
     background: #DDDEE3;
     margin: auto;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    padding: 0 70px 0;
 }
 
 @media (min-width: 720px) and (max-width: 768px) {
     .promo {
+        padding: 0;
         height: 844px;
     }
 }
 
 @media (max-width: 719px) {
     .promo {
+        padding: 0 10px 20px;
         height: 630px;
     }
 }

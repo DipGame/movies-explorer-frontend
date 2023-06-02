@@ -18,9 +18,3 @@
 .sign__button:hover {
     cursor: pointer;
 }
-
-@media (max-width: 719px) {
-    .sign__button {
-        max-width: 260px;
-    }
-}

@@ -1,4 +1,5 @@
 import './AboutMe.css';
+import { Link } from 'react-router-dom';
 import myFoto from '../../images/HmmkhQvfXoc.jpg'
 
 function AboutMe() {
@@ -29,30 +30,35 @@ function AboutMe() {
             <h2 className='about__subtitle'>
                 Портфолио
             </h2>
-            <div className='about__navigate'>
-                <h2 className='about__navigate_text'>
-                    Статичный сайт
-                </h2>
-                <p className='about__navigate_arrow'>
-                    ↗
-                </p>
-            </div>
-            <div className='about__navigate'>
-                <h2 className='about__navigate_text'>
-                    Адаптивный сайт
-                </h2>
-                <p className='about__navigate_arrow'>
-                    ↗
-                </p>
-            </div>
-            <div className='about__navigate'>
-                <h2 className='about__navigate_text'>
-                    Одностраничное приложение
-                </h2>
-                <p className='about__navigate_arrow'>
-                    ↗
-                </p>
-            </div>
+            <ul className='about__list'>
+                <li><Link className='about__navigate' to='https://dipgame.github.io/how-to-learn/' target="_blank" >
+                    <h2 className='about__navigate_text'>
+                        Статичный сайт
+                    </h2>
+                    <p className='about__navigate_arrow'>
+                        ↗
+                    </p>
+                </Link>
+                </li>
+                <li><Link className='about__navigate' to='https://dipgame.github.io/russian-travel/' target="_blank">
+                    <h2 className='about__navigate_text'>
+                        Адаптивный сайт
+                    </h2>
+                    <p className='about__navigate_arrow'>
+                        ↗
+                    </p>
+                </Link>
+                </li>
+                <li><Link className='about__navigate' to='https://ivachev.k.f.students.nomoredomains.monster/sign-in' target="_blank">
+                    <h2 className='about__navigate_text'>
+                        Одностраничное приложение
+                    </h2>
+                    <p className='about__navigate_arrow'>
+                        ↗
+                    </p>
+                </Link>
+                </li>
+            </ul>
         </section >
     )
 }

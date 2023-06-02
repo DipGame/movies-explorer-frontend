@@ -27,8 +27,8 @@ function Header(props) {
     }
 
     return (
-        <header className="header" style={{ backgroundColor: props.color, maxWidth: props.maxWidth, margin: props.marginHeader }} >
-            <img className='header__img' style={{ margin: props.marginLogo }} src={logo} onClick={props.click} alt={'Лого'} />
+        <header className="header" style={{ backgroundColor: props.color }} >
+            <img className='header__img' src={logo} onClick={props.click} alt={'Лого'} />
             <a className={`${props.films ? 'header__films' : ''}`} onClick={goMovies}>
                 {props.films}
             </a>

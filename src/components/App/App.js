@@ -61,14 +61,12 @@ function goSignUp() {
           />
           <Route path='/signup' element={
             <>
-              <Header click={goHome} color={'#FFFFFF'} maxWidth={'396px'} marginLogo={window.innerWidth < 719 ? '0 auto 0' : '0'} marginHeader={window.innerWidth < 719 ? '56px auto 0' : '70px auto 0'} />
               <Sign signLink={goSignIn} sign={'true'} title={'Добро Пожаловать!'} button={'Зарегистрироваться'} question={'Уже зарегистрированы? '} link={'Войти'} />
             </>
           }
           />
           <Route path='/signin' element={
             <>
-              <Header click={goHome} color={'#FFFFFF'} maxWidth={'396px'} marginLogo={window.innerWidth < 719 ? '0 auto 0' : '0'} marginHeader={window.innerWidth < 719 ? '56px auto 0' : '70px auto 0'} />
               <Sign signLink={goSignUp} title={'Рады видеть!'} button={'Войти'} question={'Ещё не зарегистрированы? '} link={'Регистрация'} />
             </>
           }

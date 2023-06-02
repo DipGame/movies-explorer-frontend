@@ -9,7 +9,7 @@
     overflow: hidden;
 }
 
-@media (max-width: 1276px) {
+@media (max-width: 838px) {
     .movie {
         width: 339px;
         height: 257px;

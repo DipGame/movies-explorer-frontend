@@ -10,7 +10,7 @@ function SearchForm() {
                 <button className='search__button'>Поиск</button>
             </form>
             <div className='search__container'>
-                <img className='search__filter' src={filterLogo} />
+                <img className='search__filter' src={filterLogo} alt={'Сдесь должна была быть картинка'}/>
                 <p className='search__title'>
                     Короткометражки
                 </p>

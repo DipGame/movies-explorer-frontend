@@ -6,7 +6,7 @@
     background: #FAFAFA;
 }
 
-@media (max-width: 719px) {
+@media (max-width: 800px) {
     .movies {
         padding: 40px 10px 0;
     }

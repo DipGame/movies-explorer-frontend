@@ -27,7 +27,7 @@ function HiddenComponent(props) {
             <div className={props.classOverlay}>
                 <div className={props.classSecret}>
                     <div className='secret__container'>
-                        <img className='secret__exit' src={logoExit} onClick={props.close} />
+                        <img className='secret__exit' src={logoExit} onClick={props.close} alt={'Сдесь должна была быть картинка'}/>
                         <NavLink to="/" className={(navData) => (navData.isActive ? 'secret__link secret__link_active' : 'secret__link')} onClick={goHome} >
                             Главная
                         </NavLink>
