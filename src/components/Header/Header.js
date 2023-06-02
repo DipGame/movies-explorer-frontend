@@ -1,6 +1,6 @@
 import './Header.css';
 import logo from '../../images/logo.svg'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 function Header(props) {
 
@@ -29,12 +29,12 @@ function Header(props) {
     return (
         <header className="header" style={{ backgroundColor: props.color }} >
             <img className='header__img' src={logo} onClick={props.click} alt={'Лого'} />
-            <a className={`${props.films ? 'header__films' : ''}`} onClick={goMovies}>
+            <NavLink to="/movies" className={(navData) => (navData.isActive ? 'header__films header__films_active' : 'header__films')} onClick={goMovies}>
                 {props.films}
-            </a>
-            <a className={`${props.save ? 'header__save-films' : ''}`} onClick={goSaveMovies}>
+            </NavLink>
+            <NavLink to="/save-movies" className={(navData) => (navData.isActive ? 'header__save-films header__films_active' : 'header__save-films')} onClick={goSaveMovies}>
                 {props.save}
-            </a>
+            </NavLink>
             <a className={`${props.signup ? 'header__signup' : ''}`} onClick={goSignUp} id={'signUp'} href='#'>
                 {props.signup}
             </a>
