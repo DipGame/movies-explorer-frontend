@@ -9,3 +9,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.movie__save:hover {
+    cursor: pointer;
+}
