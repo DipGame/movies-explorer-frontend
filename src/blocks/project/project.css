@@ -1,0 +1,22 @@
+.project {
+    max-width: 1280px;
+    height: 608px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 50px 0;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .project {
+        height: 585px;
+        padding: 0;
+    }
+}
+
+
+@media (max-width: 719px) {
+    .project {
+        height: 641px;
+        padding: 0;
+    }
+}

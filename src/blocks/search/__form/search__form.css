@@ -1,0 +1,19 @@
+.search__form {
+    border: 1.5px solid rgb(170, 170, 170, .2);
+    border-radius: 8px;
+    margin: 70px 70px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .search__form {
+        margin: 70px 30px 0;
+    }
+}
+
+@media (max-width: 719px) {
+    .search__form {
+        margin: 70px 14px 0;
+    }
+}

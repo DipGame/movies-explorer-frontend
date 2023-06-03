@@ -1,0 +1,19 @@
+.about__img {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .about__img {
+        width: 255px;
+    }
+}
+
+@media (max-width: 719px) {
+    .about__img {
+        margin: 60px auto 0;
+    }
+}

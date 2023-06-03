@@ -1,0 +1,32 @@
+.about__link {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    margin: 0;
+    text-decoration: none;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .about__link {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+    }
+}
+
+@media (max-width: 719px) {
+    .about__link {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+    }
+}

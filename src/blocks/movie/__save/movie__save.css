@@ -1,0 +1,15 @@
+.movie__save {
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    object-fit: contain;
+    background: none;
+    border: none;
+    background-image: url(../../../images/save8d.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.movie__save:hover {
+    cursor: pointer;
+}

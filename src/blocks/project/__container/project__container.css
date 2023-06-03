@@ -1,0 +1,15 @@
+.project__container {
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .project__container {}
+}
+
+
+@media (max-width: 719px) {
+    .project__container {
+        margin: 0 0 0 0;
+    }
+}

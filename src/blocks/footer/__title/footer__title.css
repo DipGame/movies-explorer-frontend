@@ -1,0 +1,21 @@
+.footer__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #A0A0A0;
+    margin: 79px 0 20px 0;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .footer__title {
+    }
+}
+
+@media (max-width: 719px) {
+    .footer__title {
+        margin: 79px 0 21px 0;
+    }
+}

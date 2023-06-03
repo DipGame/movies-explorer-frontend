@@ -1,0 +1,9 @@
+.sign__img {
+
+}
+
+@media (max-width: 320px) {
+    .sign__img {
+        margin: 0 auto 0;
+    }
+}

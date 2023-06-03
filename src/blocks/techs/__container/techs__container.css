@@ -1,0 +1,21 @@
+.techs__container {
+    max-width: 1140px;
+    margin: 23px auto 0;
+    border-top: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .techs__container {
+        max-width: 668px;
+    }
+}
+
+
+@media (max-width: 719px) {
+    .techs__container {
+        margin: 0 18px 0;
+    }
+}

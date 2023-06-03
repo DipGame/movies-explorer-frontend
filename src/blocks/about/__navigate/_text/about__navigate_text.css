@@ -1,0 +1,34 @@
+.about__navigate_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: -0.04em;
+    color: #000000;
+    margin: 0;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .about__navigate_text {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 50px;
+        letter-spacing: -0.04em;
+        color: #000000;
+    }
+}
+
+@media (max-width: 719px) {
+    .about__navigate_text {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.04em;
+        color: #000000;
+    }
+}

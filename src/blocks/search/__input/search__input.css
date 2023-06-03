@@ -1,0 +1,23 @@
+.search__input {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    width: 100%;
+    margin: 25px;
+    border: none;
+    background: #FAFAFA;
+    outline: none;
+}
+
+.search__input::placeholder {
+    color: #A0A0A0;
+}
+
+@media (max-width: 719px) {
+    .search__input {
+        font-size: 16px;
+        margin: 20px 12px;
+    }
+}

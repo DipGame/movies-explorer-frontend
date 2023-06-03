@@ -1,0 +1,25 @@
+.project__box {
+    max-width: 1140px;
+    height: 270px;
+    border-top: 1px solid #000000;
+    padding: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .project__box {
+        max-width: 668px;
+    }
+}
+
+
+@media (max-width: 719px) {
+    .project__box {
+        margin: 0 18px 0;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}

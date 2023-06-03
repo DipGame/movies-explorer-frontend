@@ -1,0 +1,19 @@
+.footer {
+    max-width: 1280px;
+    background: #F8F8F8;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .footer {
+    }
+}
+
+@media (max-width: 719px) {
+    .footer {
+        height: 253px;
+    }
+}

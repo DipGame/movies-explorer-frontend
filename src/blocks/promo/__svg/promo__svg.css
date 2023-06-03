@@ -1,0 +1,21 @@
+.promo__svg {
+    width: 100%;
+    max-width: 722px;
+    margin: 102px 0 0 auto;
+}
+
+@media (max-width: 768px) {
+    .promo__svg {
+        margin: 140px auto 0;
+        max-width: 680px;
+    }
+}
+
+@media (max-width: 320px) {
+    .promo__svg {
+        position: absolute;
+        bottom: 40px;
+        width: 722px;
+        left: -181px;
+    }
+}

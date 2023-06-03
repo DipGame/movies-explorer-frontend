@@ -1,0 +1,24 @@
+.project__week_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#project__week_text_4 {
+    color: #000000;
+}
+
+@media (max-width: 719px) {
+    .project__week_text {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+        text-align: center;
+    }
+}

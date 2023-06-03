@@ -1,0 +1,21 @@
+.about {
+    max-width: 1280px;
+    height: 1079px;
+    background: #FAFAFA;
+    margin: 0 auto 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .about {
+        height: 994px;
+    }
+}
+
+@media (max-width: 719px) {
+    .about {
+        height: 1198px;
+    }
+}

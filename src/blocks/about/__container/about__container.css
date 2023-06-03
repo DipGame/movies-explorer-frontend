@@ -1,0 +1,20 @@
+.about__container {
+    max-width: 1140px;
+    border-top: 1px solid;
+    margin: 23px 70px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .about__container {
+        margin: 23px 50px 0;
+    }
+}
+
+@media (max-width: 719px) {
+    .about__container {
+        margin: 28px 14px 0;
+        flex-direction: column-reverse;
+    }
+}

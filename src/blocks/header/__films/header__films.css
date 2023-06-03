@@ -1,0 +1,22 @@
+.header__films {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: right;
+    color: #000000;
+    margin: auto 0 auto 44px;
+    text-decoration: none;
+}
+
+.header__films:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header__films {
+        visibility: hidden;
+        width: 0;
+    }
+}

@@ -1,0 +1,27 @@
+.footer__link {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: right;
+    color: #000000;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.footer__link:nth-of-type(1) {
+    margin: 20px 20px 0 auto;
+}
+
+@media (max-width: 719px) {
+    .footer__link {
+        text-align: center;
+        margin: 47px 0 0 0;
+    }
+
+    .footer__link:nth-of-type(1) {
+        text-align: center;
+        margin: -34px 0 0 0;
+    }
+}

@@ -1,0 +1,32 @@
+.about__navigate {
+    display: flex;
+    margin: 50px 70px 0;
+    max-width: 1140px;
+    justify-content: space-between;
+    border-bottom: 1px solid #E8E8E8;
+    align-items: end;
+    padding-bottom: 19px;
+    text-decoration: none;
+}
+
+.about__navigate:nth-of-type(2) {
+    margin-top: 20px;
+    padding-bottom: 19px;
+}
+
+.about__navigate:nth-of-type(3) {
+    margin-top: 20px;
+    border: none
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+    .about__navigate {
+        margin: 50px 50px 0;
+    }
+}
+
+@media (max-width: 719px) {
+    .about__navigate {
+        margin: 40px 14px 0;
+    }
+}
