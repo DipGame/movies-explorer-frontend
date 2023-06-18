@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import threeLine from '../../images/icon__COLOR_icon-main.png';
 
-function SavedMovies() {
+function SavedMovies(props) {
 
     const navigate = useNavigate();
 
@@ -29,11 +29,21 @@ function SavedMovies() {
         navigate('/', { replace: true });
     }
 
+    const [isActiveButton, setIsActiveButton] = useState(false)
+
+    function handleClickFilter() {
+        if (isActiveButton === false) {
+            setIsActiveButton(true);
+        } else {
+            setIsActiveButton(false);
+        }
+    }
+
     return (
         <>
             <Header click={goHome} threeLine={threeLine} films={'Фильмы'} save={'Сохраненные фильмы'} account={'Аккаунт'} color={'#FAFAFA'} overlay={openOverlay} />
-            <SearchForm />
-            <MoviesCardList />
+            <SearchForm handleClickFilter={handleClickFilter} filterActive={isActiveButton} />
+            <MoviesCardList cards={props.cards} load={props.load} handleCardClick={props.handleCardClick} save={true} filterOn={isActiveButton} />
             <Footer />
             <HiddenComponent classOverlay={overlay} classSecret={secret} close={closeOverlay} />
         </>

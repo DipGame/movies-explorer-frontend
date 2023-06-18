@@ -4,7 +4,7 @@ import Header from '../Header/Header.js';
 import SearchForm from '../SearchForm/SearchForm';
 import Footer from '../Footer/Footer.js';
 import HiddenComponent from '../HiddenComponent/HiddenComponent.js';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import threeLine from '../../images/icon__COLOR_icon-main.png'
 
@@ -29,11 +29,21 @@ function Movies(props) {
         navigate('/', { replace: true });
     }
 
+    const [isActiveButton, setIsActiveButton] = useState(false)
+
+    function handleClickFilter() {
+        if (isActiveButton === false) {
+            setIsActiveButton(true);
+        } else {
+            setIsActiveButton(false);
+        }
+    }
+
     return (
         <>
             <Header click={goHome} threeLine={threeLine} films={'Фильмы'} save={'Сохраненные фильмы'} account={'Аккаунт'} color={'#FAFAFA'} overlay={openOverlay} />
-            <SearchForm />
-            <MoviesCardList />
+            <SearchForm handleClickFilter={handleClickFilter} filterActive={isActiveButton} />
+            <MoviesCardList cards={props.cards} load={props.load} handleCardClick={props.handleCardClick} save={false} filterOn={isActiveButton} />
             <Footer />
             <HiddenComponent classOverlay={overlay} classSecret={secret} close={closeOverlay} />
         </>

@@ -2,6 +2,7 @@
     margin: 24px 0 0 0;
     width: 100%;
     max-width: 396px;
+    position: relative;
 }
 
 .sign__container:first-of-type {

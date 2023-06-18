@@ -1,0 +1,4 @@
+.profile__text_active {
+    border-bottom: 1px solid;
+    pointer-events: all;
+}
