@@ -179,6 +179,7 @@ function App() {
             saveItem.save = true;
           })
         })
+        console.log(data);
         setMovieCard(data)
       })
       .finally(() => {

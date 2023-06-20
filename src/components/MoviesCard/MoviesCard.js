@@ -16,10 +16,17 @@ function MoviesCard(props) {
         }
     }, [])
 
+    function handleGoTrailerLink() {
+        window.open(
+            props.trailerLink,
+            '_blank'
+        );
+    }
+
     return (
         <>
-            <div className='movie' >
-                <img className='movie__img' src={`${!props.save ? `${'https://api.nomoreparties.co/' + props.image}` : props.image}`} alt={'Сдесь должна была быть картинка'} />
+            <div className='movie'>
+                <img className='movie__img' src={`${!props.save ? `${'https://api.nomoreparties.co/' + props.image}` : props.image}`} alt={'Сдесь должна была быть картинка'} onClick={handleGoTrailerLink} />
                 <div className='movie__container'>
                     <h2 className='movie__title'>
                         {props.name}

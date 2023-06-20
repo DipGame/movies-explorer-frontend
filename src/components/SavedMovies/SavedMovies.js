@@ -14,6 +14,8 @@ function SavedMovies(props) {
 
     const [overlay, setOverlay] = useState('overlay');
     const [secret, setSecret] = useState('secret');
+    const [isActiveButton, setIsActiveButton] = useState(false);
+    const [request, setRequest] = useState('');
 
     function openOverlay() {
         setOverlay('overlay overlay_open');
@@ -29,8 +31,6 @@ function SavedMovies(props) {
         navigate('/', { replace: true });
     }
 
-    const [isActiveButton, setIsActiveButton] = useState(false)
-
     function handleClickFilter() {
         if (isActiveButton === false) {
             setIsActiveButton(true);
@@ -39,11 +39,19 @@ function SavedMovies(props) {
         }
     }
 
+    function handleVisionMovies() {
+        handleInputValue();
+    }
+
+    function handleInputValue(value) {
+        setRequest(value);
+    }
+
     return (
         <>
             <Header click={goHome} threeLine={threeLine} films={'Фильмы'} save={'Сохраненные фильмы'} account={'Аккаунт'} color={'#FAFAFA'} overlay={openOverlay} />
-            <SearchForm handleClickFilter={handleClickFilter} filterActive={isActiveButton} />
-            <MoviesCardList cards={props.cards} load={props.load} handleCardClick={props.handleCardClick} save={true} filterOn={isActiveButton} />
+            <SearchForm handleClickFilter={handleClickFilter} filterActive={isActiveButton} handleVisionMovies={handleVisionMovies} onSelectInput={handleInputValue} />
+            <MoviesCardList cards={props.cards} load={props.load} handleCardClick={props.handleCardClick} save={true} fliterOn={isActiveButton} request={request}/>
             <Footer />
             <HiddenComponent classOverlay={overlay} classSecret={secret} close={closeOverlay} />
         </>

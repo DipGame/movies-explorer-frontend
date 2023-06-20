@@ -22,21 +22,15 @@ function Profile(props) {
 
     const api = new Api(configApi);
 
-    // useEffect(() => {
-    //     console.log(value);
-    // }, [currentUser])
-
     function redactProfile() {
         const profileName = document.querySelector('#name');
         const profileEmail = document.querySelector('#email');
         if (profileClass === 'profile__text profile__text_active') {
-            // console.log(profileName.value);
             api.setUserInfo({
                 name: profileName.value,
                 email: profileEmail.value,
             })
                 .then((res) => {
-                    console.log(res);
                     setProfileClass('profile__text');
                     setEditText('Редактировать')
                 })
