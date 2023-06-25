@@ -19,7 +19,7 @@ const MoviesCardList = (props) => {
             return (<li><MoviesCard item={item} trailerLink={item.trailerLink} image={`${!props.save ? item.image.url : item.image}`} name={item.nameRU} duration={item.duration} handleCardClick={props.handleCardClick} save={props.save} checkSave={item.save} /></li>)
         });
 
-        if (numView === numAll.length || numAll.length < numView) {
+        if (numView === numAll?.length || numAll?.length < numView) {
             setOnVision(false);
         } else {
             setOnVision(true);
@@ -34,7 +34,7 @@ const MoviesCardList = (props) => {
 
     useEffect(() => {
         if (!props.save) {
-            if (cards.filter((filter) => filter.description.includes(props.request.toLowerCase()).length === 0 || filter.nameRU.includes(props.request.toLowerCase()))?.length === 0) {
+            if (cards.filter((filter) => filter.description.includes(props.request.toLowerCase())?.length === 0 || filter.nameRU.includes(props.request.toLowerCase()))?.length === 0) {
                 setFind(false)
             } else {
                 setFind(true);
