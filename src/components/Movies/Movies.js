@@ -43,7 +43,7 @@ function Movies(props) {
     }
 
     useEffect(() => {
-        if (localStorage.getItem("inputFindValue").length > 1) {
+        if (localStorage.getItem("inputFindValue")?.length > 1) {
             handleVisionMovies();
         }
     }, [])

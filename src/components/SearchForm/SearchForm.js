@@ -9,7 +9,7 @@ function SearchForm(props) {
 
     useEffect(() => {
         const inputFind = document.querySelector('.search__input');
-        if (localStorage.getItem("inputFindValue").length > 0) {
+        if (localStorage.getItem("inputFindValue")?.length > 0) {
             inputFind.value = localStorage.getItem("inputFindValue")
             handleLangChange();
         }
