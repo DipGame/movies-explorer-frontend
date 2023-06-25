@@ -5,14 +5,7 @@ export const movies = () => {
         method: 'GET',
     })
         .then(response => response.json())
-        .catch(checkResponse())
+        .catch((err) => {
+            console.log(err);
+        })
 };
-
-function checkResponse() {
-    return (response) => {
-        if (response.ok) {
-            return response.json()
-        }
-        return Promise.reject(new Error('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.'))
-    }
-}

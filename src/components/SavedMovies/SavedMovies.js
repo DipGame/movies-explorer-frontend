@@ -39,10 +39,6 @@ function SavedMovies(props) {
         }
     }
 
-    function handleVisionMovies() {
-        handleInputValue();
-    }
-
     function handleInputValue(value) {
         setRequest(value);
     }
@@ -50,7 +46,7 @@ function SavedMovies(props) {
     return (
         <>
             <Header click={goHome} threeLine={threeLine} films={'Фильмы'} save={'Сохраненные фильмы'} account={'Аккаунт'} color={'#FAFAFA'} overlay={openOverlay} />
-            <SearchForm handleClickFilter={handleClickFilter} filterActive={isActiveButton} handleVisionMovies={handleVisionMovies} onSelectInput={handleInputValue} />
+            <SearchForm handleClickFilter={handleClickFilter} filterActive={isActiveButton} save={true} onSelectInput={handleInputValue} />
             <MoviesCardList cards={props.cards} load={props.load} handleCardClick={props.handleCardClick} save={true} fliterOn={isActiveButton} request={request}/>
             <Footer />
             <HiddenComponent classOverlay={overlay} classSecret={secret} close={closeOverlay} />

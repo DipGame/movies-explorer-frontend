@@ -32,7 +32,7 @@ function App() {
     setLoggedIn(false);
     navigate('/signin', { replace: true });
   }
-
+  
   const handleCardSave = (event) => {
     const card = event.currentTarget;
     const movieData = JSON.parse(card.id);
@@ -70,13 +70,13 @@ function App() {
       })
         .then((res) => {
           api
-          .getSaveMovies()
-          .then((data) => {
-            card.className = 'movie__save'
-            card.className = 'movie__save movie__save_active'
-            setSaveMovieCard(data);
-          })
-          .catch((err) => console.log(err))
+            .getSaveMovies()
+            .then((data) => {
+              card.className = 'movie__save'
+              card.className = 'movie__save movie__save_active'
+              setSaveMovieCard(data);
+            })
+            .catch((err) => console.log(err))
         })
         .catch((err) => {
           console.log(err);
@@ -109,7 +109,6 @@ function App() {
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [load, setLoad] = useState(false);
-  const [isActive, setIsActive] = useState(false);
 
   const [movieCard, setMovieCard] = useState([]);
   const [saveMovieCard, setSaveMovieCard] = useState([]);
@@ -124,20 +123,26 @@ function App() {
 
   useEffect(() => {
     handleTokenCheck();
-  }, [])
+  }, [loggedIn])
 
   const handleTokenCheck = () => {
     if (localStorage.getItem('jwt')) {
       const jwt = localStorage.getItem('jwt');
       ApiUser.checkToken(jwt).then((res) => {
         setLoggedIn(true);
-        navigate('/movies', { replace: true });
       })
         .catch((err) => {
           console.log(err);
         })
     }
   }
+
+  useEffect(() => {
+    navigate(JSON.parse(window.sessionStorage.getItem('lastRoute') || '{}'))
+    window.onbeforeunload = () => {
+        window.sessionStorage.setItem('lastRoute', JSON.stringify(window.location.pathname))
+    }
+}, [])
 
   const api = new Api(configApi);
 
@@ -179,7 +184,6 @@ function App() {
             saveItem.save = true;
           })
         })
-        console.log(data);
         setMovieCard(data)
       })
       .finally(() => {
@@ -228,7 +232,7 @@ function App() {
             />
             <Route path='/signup' element={
               <>
-                <Sign sign={'true'} title={'Добро Пожаловать!'} button={'Зарегистрироваться'} question={'Уже зарегистрированы? '} link={'Войти'} />
+                <Sign handleLogin={handleLogin} sign={'true'} title={'Добро Пожаловать!'} button={'Зарегистрироваться'} question={'Уже зарегистрированы? '} link={'Войти'} />
               </>
             }
             />

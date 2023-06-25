@@ -14,7 +14,9 @@ export const register = (userName, userEmail, userPass) => {
         })
     })
         .then(response => response.json())
-        .catch(checkResponse())
+        .catch((err) => {
+            console.log(err);
+        })
 };
 
 export const login = (userEmail, userPass) => {
@@ -30,17 +32,10 @@ export const login = (userEmail, userPass) => {
         })
     })
         .then(response => response.json())
-        .catch(checkResponse())
+        .catch((err) => {
+            console.log(err);
+        })
 };
-
-function checkResponse() {
-    return (response) => {
-        if (response.ok) {
-            return response.json()
-        }
-        return Promise.reject(new Error('Что-то пошло не так....'))
-    }
-}
 
 export const checkToken = (token) => {
     return fetch(`${BASE_URL}/users/me`, {

@@ -5,21 +5,32 @@ import filterLogoOn from '../../images/smalltumb.png'
 
 function SearchForm(props) {
 
-    const inputFind = document.querySelector('.search__input');
-
     const [errorInput, setErrorInput] = useState(false);
+
+    useEffect(() => {
+        const inputFind = document.querySelector('.search__input');
+        if (localStorage.getItem("inputFindValue").length > 0) {
+            inputFind.value = localStorage.getItem("inputFindValue")
+            handleLangChange();
+        }
+    }, [])
 
     const handleClickFindButton = (event) => {
         event.preventDefault();
+        const inputFind = document.querySelector('.search__input');
         if (inputFind.value.length > 1) {
             setErrorInput(false);
-            props.handleVisionMovies();
+            if (!props.save) {
+                props.handleVisionMovies();
+            }
         } else {
             setErrorInput(true);
         }
     }
 
     const handleLangChange = () => {
+        const inputFind = document.querySelector('.search__input');
+        localStorage.setItem("inputFindValue", inputFind.value);
         let text = inputFind.value;
         props.onSelectInput(text);
     }

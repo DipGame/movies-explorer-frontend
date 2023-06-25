@@ -55,7 +55,6 @@ function Sign({ handleLogin, ...props }) {
             ...formValue,
             [name]: value
         });
-
     }
 
     useEffect(() => {
@@ -116,13 +115,15 @@ function Sign({ handleLogin, ...props }) {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (props.sign) {
+            // props.handleRegister(formValue.name, formValue.email, formValue.password);
+            // props.handleLogin(formValue.email, formValue.password);
             Api.register(formValue.name, formValue.email, formValue.password)
                 .then((data) => {
                     Api.login(formValue.email, formValue.password)
                         .then((data) => {
                             if (data.token) {
                                 setFormValue({ name: '', email: '', password: '' });
-                                navigate('/profile', { replace: true });
+                                navigate('/movies', { replace: true });
                                 localStorage.setItem('jwt', data.token);
                                 handleLogin();
                                 return data;
@@ -138,6 +139,7 @@ function Sign({ handleLogin, ...props }) {
                     console.log(err)
                 })
         } else {
+            // props.handleLogin(formValue.email, formValue.password);
             Api.login(formValue.email, formValue.password)
                 .then((data) => {
                     if (data.token) {

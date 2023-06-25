@@ -4,7 +4,7 @@ import Header from '../Header/Header.js';
 import SearchForm from '../SearchForm/SearchForm';
 import Footer from '../Footer/Footer.js';
 import HiddenComponent from '../HiddenComponent/HiddenComponent.js';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import threeLine from '../../images/icon__COLOR_icon-main.png'
 
@@ -17,6 +17,8 @@ function Movies(props) {
     const [isActiveFindButton, setIsActiveFindButton] = useState(false);
     const [isActiveButton, setIsActiveButton] = useState(false);
     const [request, setRequest] = useState('');
+
+    console.log(request);
 
     function openOverlay() {
         setOverlay('overlay overlay_open');
@@ -39,6 +41,12 @@ function Movies(props) {
             setIsActiveButton(false);
         }
     }
+
+    useEffect(() => {
+        if (localStorage.getItem("inputFindValue").length > 1) {
+            handleVisionMovies();
+        }
+    }, [])
 
     function handleVisionMovies() {
         setIsActiveFindButton(true);

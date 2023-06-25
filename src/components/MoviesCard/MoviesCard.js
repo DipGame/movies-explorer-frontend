@@ -14,7 +14,7 @@ function MoviesCard(props) {
         } else {
             setMin(props.duration);
         }
-    }, [])
+    }, [props.lol])
 
     function handleGoTrailerLink() {
         window.open(
@@ -31,10 +31,11 @@ function MoviesCard(props) {
                     <h2 className='movie__title'>
                         {props.name}
                     </h2>
-                    <button className={`${!props.checkSave ? 'movie__save' : 'movie__save movie__save_active'}`} alt={'Кнопка сохранения'} id={JSON.stringify(props.item)} onClick={props.handleCardClick} ></button>
+                    <button className={!props.save ? `${!props.checkSave ? 'movie__save' : 'movie__save movie__save_active'}` : 'movie__save movie__save_delete'} alt={'Кнопка сохранения'} id={JSON.stringify(props.item)} onClick={props.handleCardClick} ></button>
                 </div>
                 <p className='movie__time'>
-                    {hour}ч{min}м
+                    {/* {hour}ч{min}м */}
+                    {props.filterActive ? `0ч${props.duration}м` : `${hour}ч${min}м`}
                 </p>
             </div>
         </>
