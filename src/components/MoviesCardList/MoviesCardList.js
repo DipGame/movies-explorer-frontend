@@ -33,9 +33,8 @@ const MoviesCardList = (props) => {
     }
 
     useEffect(() => {
-        console.log(props.request.toLowerCase());
         if (!props.save) {
-            if (cards.filter((filter) => filter.description.includes(props.request.toLowerCase()) || filter.nameRU.includes(props.request.toLowerCase())).length === 0) {
+            if (cards.filter((filter) => filter.description.includes(props.request.toLowerCase()).length === 0 || filter.nameRU.includes(props.request.toLowerCase()))?.length === 0) {
                 setFind(false)
             } else {
                 setFind(true);
