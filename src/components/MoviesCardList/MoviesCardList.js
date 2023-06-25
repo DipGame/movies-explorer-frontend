@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Preloader from '../Preloader/Preloader';
 import crySmail from '../../images/pngegg.png'
 
-function MoviesCardList(props) {
+const MoviesCardList = (props) => {
 
     const cards = props.cards;
 
