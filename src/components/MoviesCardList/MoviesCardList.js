@@ -34,7 +34,7 @@ const MoviesCardList = (props) => {
 
     useEffect(() => {
         if (!props.save) {
-            if (cards.filter((filter) => filter.description.includes(props.request.toLowerCase())?.length === 0 || filter.nameRU.includes(props.request.toLowerCase()))?.length === 0) {
+            if (cards.filter((filter) => filter.description.includes(props.request.toLowerCase()))?.length === 0 || ((filter) => filter.nameRU.includes(props.request.toLowerCase()))?.length === 0) {
                 setFind(false)
             } else {
                 setFind(true);
@@ -47,14 +47,14 @@ const MoviesCardList = (props) => {
             <section className='movies'>
                 <ul className='movies__container' >
                     {cards.filter((filter) => filter.description.includes(props.request.toLowerCase()) || filter.nameRU.includes(props.request.toLowerCase())).filter((filter) => props.fliterOn ? filter.duration < 40 : filter.duration > 0).slice(0, moreMovies).map((item) => {
-                        return (<li id='container'><MoviesCard filterActive={props.fliterOn} lol={props.fliterOn} item={item} trailerLink={item.trailerLink} image={`${!props.save ? item.image.url : item.image}`} name={item.nameRU} duration={item.duration} handleCardClick={props.handleCardClick} save={props.save} checkSave={item.save} /></li>)
+                        return (<li id='container' key={item.id}><MoviesCard filterActive={props.fliterOn} lol={props.fliterOn} item={item} trailerLink={item.trailerLink} image={`${!props.save ? item.image.url : item.image}`} name={item.nameRU} duration={item.duration} handleCardClick={props.handleCardClick} save={props.save} checkSave={item.save} /></li>)
                     })}
                 </ul>
                 {props.load && <Preloader />}
-                {!find &&
+                {!find ?
                     <><img className='movies__img' src={crySmail} />
                         <p className='movies__text'>Ничего не найдено...</p>
-                    </>}
+                    </> : ''}
                 {onVision && <div className='movies__more'>
                     <button className='movies__button' onClick={handleMoreButtonClick}>Ещё</button>
                 </div>}

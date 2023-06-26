@@ -18,8 +18,6 @@ function Movies(props) {
     const [isActiveButton, setIsActiveButton] = useState(false);
     const [request, setRequest] = useState('');
 
-    console.log(request);
-
     function openOverlay() {
         setOverlay('overlay overlay_open');
         setSecret('secret secret_active');
@@ -36,8 +34,10 @@ function Movies(props) {
 
     function handleClickFilter() {
         if (isActiveButton === false) {
+            localStorage.setItem("isActiveButtonFilter", true);
             setIsActiveButton(true);
         } else {
+            localStorage.setItem("isActiveButtonFilter", false);
             setIsActiveButton(false);
         }
     }
@@ -56,11 +56,19 @@ function Movies(props) {
         setRequest(value);
     }
 
+    useEffect(() => {
+        if (localStorage.getItem("isActiveButtonFilter") === 'true') {
+            setIsActiveButton(true);
+        } else {
+            setIsActiveButton(false);
+        }
+    }, [])
+
     return (
         <>
             <Header click={goHome} threeLine={threeLine} films={'Фильмы'} save={'Сохраненные фильмы'} account={'Аккаунт'} color={'#FAFAFA'} overlay={openOverlay} />
-            <SearchForm handleClickFilter={handleClickFilter} filterActive={isActiveButton} handleVisionMovies={handleVisionMovies} onSelectInput={handleInputValue}/>
-            {isActiveFindButton && <MoviesCardList cards={props.cards} load={props.load} handleCardClick={props.handleCardClick} save={false} fliterOn={isActiveButton} request={request}/>}
+            <SearchForm handleClickFilter={handleClickFilter} filterActive={isActiveButton} handleVisionMovies={handleVisionMovies} onSelectInput={handleInputValue} />
+            {isActiveFindButton && <MoviesCardList cards={props.cards} load={props.load} handleCardClick={props.handleCardClick} save={false} fliterOn={isActiveButton} request={request} />}
             <Footer />
             <HiddenComponent classOverlay={overlay} classSecret={secret} close={closeOverlay} />
         </>

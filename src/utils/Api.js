@@ -39,17 +39,6 @@ export default class Api {
             .then(this._checkResponse())
     }
 
-    // createNewAvatar(data) {
-    //     return fetch(`${this._url}/users/me/avatar`, {
-    //         headers: this._headers,
-    //         method: 'PATCH',
-    //         body: JSON.stringify({
-    //             avatar: data.avatar,
-    //         })
-    //     })
-    //         .then(this._checkResponse())
-    // }
-
     changeSaveCard(data) {
         return fetch(`${this._url}/movies`, {
             headers: this._headers,

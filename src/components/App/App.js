@@ -9,6 +9,7 @@ import * as ApiMovies from '../../utils/MoviesApi';
 import Footer from '../Footer/Footer.js'
 import Profile from '../Profile/Profile.js'
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import PageNotFound from '../PageNotFound/PageNotFound';
 import Sign from '../Sign/Sign.js'
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { Routes, Route, useNavigate } from 'react-router-dom';
@@ -32,7 +33,7 @@ function App() {
     setLoggedIn(false);
     navigate('/signin', { replace: true });
   }
-  
+
   const handleCardSave = (event) => {
     const card = event.currentTarget;
     const movieData = JSON.parse(card.id);
@@ -121,16 +122,13 @@ function App() {
     },
   }
 
-  useEffect(() => {
-    handleTokenCheck();
-  }, [loggedIn])
-
   const handleTokenCheck = () => {
     if (localStorage.getItem('jwt')) {
       const jwt = localStorage.getItem('jwt');
-      ApiUser.checkToken(jwt).then((res) => {
-        setLoggedIn(true);
-      })
+      ApiUser.checkToken(jwt)
+        .then((res) => {
+          setLoggedIn(true);
+        })
         .catch((err) => {
           console.log(err);
         })
@@ -138,11 +136,16 @@ function App() {
   }
 
   useEffect(() => {
+    console.log(loggedIn);
+    handleTokenCheck();
+  }, [loggedIn])
+
+  useEffect(() => {
     navigate(JSON.parse(window.sessionStorage.getItem('lastRoute') || '{}'))
     window.onbeforeunload = () => {
-        window.sessionStorage.setItem('lastRoute', JSON.stringify(window.location.pathname))
+      window.sessionStorage.setItem('lastRoute', JSON.stringify(window.location.pathname))
     }
-}, [])
+  }, [])
 
   const api = new Api(configApi);
 
@@ -230,18 +233,19 @@ function App() {
               </>
             }
             />
-            <Route path='/signup' element={
+            {(!loggedIn) && <Route path='/signup' element={
               <>
                 <Sign handleLogin={handleLogin} sign={'true'} title={'Добро Пожаловать!'} button={'Зарегистрироваться'} question={'Уже зарегистрированы? '} link={'Войти'} />
               </>
             }
-            />
-            <Route path='/signin' element={
+            />}
+            {(!loggedIn) && <Route path='/signin' element={
               <>
                 <Sign handleLogin={handleLogin} title={'Рады видеть!'} button={'Войти'} question={'Ещё не зарегистрированы? '} link={'Регистрация'} />
               </>
             }
-            />
+            />}
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
       </div>

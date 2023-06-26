@@ -1,4 +1,6 @@
 import './Sign.css';
+import SuccessTrue from '../SuccessTrue/SuccessTrue.js'
+import SuccessFalse from '../SuccessFalse/SuccessFalse.js'
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import * as Api from '../../utils/MainApi';
@@ -17,6 +19,8 @@ function Sign({ handleLogin, ...props }) {
     const [nameDirty, setNameDirty] = useState(false);
     const [emailDirty, setEmailDirty] = useState(false);
     const [passwordDirty, setPasswordDirty] = useState(false);
+    const [activeTrue, setActiveTrue] = useState(false);
+    const [activeFalse, setActiveFalse] = useState(false);
 
     const [catchText, setCatchText] = useState('');
 
@@ -115,13 +119,15 @@ function Sign({ handleLogin, ...props }) {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (props.sign) {
-            // props.handleRegister(formValue.name, formValue.email, formValue.password);
-            // props.handleLogin(formValue.email, formValue.password);
             Api.register(formValue.name, formValue.email, formValue.password)
                 .then((data) => {
                     Api.login(formValue.email, formValue.password)
                         .then((data) => {
                             if (data.token) {
+                                setActiveTrue(true);
+                                setTimeout(() => {
+                                    setActiveTrue(false);
+                                }, 1500);
                                 setFormValue({ name: '', email: '', password: '' });
                                 navigate('/movies', { replace: true });
                                 localStorage.setItem('jwt', data.token);
@@ -130,27 +136,42 @@ function Sign({ handleLogin, ...props }) {
                             }
                         })
                         .catch((err) => {
+                            setActiveFalse(true);
+                            setTimeout(() => {
+                                setActiveFalse(false);
+                            }, 1500);
                             setCatchText('Что то пошло не так...');
                             console.log(err)
                         })
                 })
                 .catch((err) => {
+                    setActiveFalse(true);
+                    setTimeout(() => {
+                        setActiveFalse(false);
+                    }, 1500);
                     setCatchText('Что то пошло не так...');
                     console.log(err)
                 })
         } else {
-            // props.handleLogin(formValue.email, formValue.password);
             Api.login(formValue.email, formValue.password)
                 .then((data) => {
                     if (data.token) {
+                        setActiveTrue(true);
+                        setTimeout(() => {
+                            setActiveTrue(false);
+                        }, 1500);
                         setFormValue({ name: '', email: '', password: '' });
-                        navigate('/profile', { replace: true });
+                        navigate('/movies', { replace: true });
                         localStorage.setItem('jwt', data.token);
                         handleLogin();
                         return data;
                     }
                 })
                 .catch((err) => {
+                    setActiveFalse(true);
+                    setTimeout(() => {
+                        setActiveFalse(false);
+                    }, 1500);
                     setCatchText('Что то пошло не так...');
                     console.log(err)
                 })
@@ -158,50 +179,54 @@ function Sign({ handleLogin, ...props }) {
     }
 
     return (
-        <form className='sign' onSubmit={handleSubmit}>
-            <div className='sign__box'>
-                <img className='sign__img' src={logo} alt={'Лого'} onClick={goHome} />
-            </div>
-            <h2 className='sign__title'>
-                {props.title}
-            </h2>
-            {(props.sign) && <div className='sign__container'>
-                <h3 className='sign__name'>
-                    Имя
-                </h3>
-                <input className='sign__input' onBlur={e => blurHandler(e)} value={formValue.name} type='text' id='signInputName' name='name' onInput={restrictionName} onChange={handleChange} required pattern=".{2,}" maxLength={50}></input>
-                <p className='sign__err'>{`${(nameDirty === true && checkValidName() === false) ? 'Минимальное кол-во символов - 2' : ''}`}</p>
-            </div>
-            }
-            <div className='sign__container'>
-                <h3 className='sign__name'>
-                    E-mail
-                </h3>
-                <input className='sign__input' onBlur={e => blurHandler(e)} value={formValue.email} type='email' name='email' onChange={handleChange} required minLength={2}></input>
-                <p className='sign__err'>{`${(emailDirty === true && checkValidEmail() === false) ? 'Пожалуйста, введите корректный Email' : ''}`}</p>
-            </div>
-            <div className='sign__container'>
-                <h3 className='sign__name'>
-                    Пароль
-                </h3>
-                <input className='sign__input' onBlur={e => blurHandler(e)} value={formValue.password} type='password' name='password' onChange={handleChange} required minLength={8}></input>
-                <p className='sign__err'>{`${(passwordDirty === true && checkValidPassword() === false) ? 'Минимальное кол-во символов - 8' : ''}`}</p>
-            </div>
-            <div className='sign__case'>
-                <p className='sign__catch'>
-                    {catchText}
+        <>
+            <form className='sign' onSubmit={handleSubmit}>
+                <div className='sign__box'>
+                    <img className='sign__img' src={logo} alt={'Лого'} onClick={goHome} />
+                </div>
+                <h2 className='sign__title'>
+                    {props.title}
+                </h2>
+                {(props.sign) && <div className='sign__container'>
+                    <h3 className='sign__name'>
+                        Имя
+                    </h3>
+                    <input className='sign__input' onBlur={e => blurHandler(e)} value={formValue.name} type='text' id='signInputName' name='name' onInput={restrictionName} onChange={handleChange} required pattern=".{2,}" maxLength={50}></input>
+                    <p className='sign__err'>{`${(nameDirty === true && checkValidName() === false) ? 'Минимальное кол-во символов - 2' : ''}`}</p>
+                </div>
+                }
+                <div className='sign__container'>
+                    <h3 className='sign__name'>
+                        E-mail
+                    </h3>
+                    <input className='sign__input' onBlur={e => blurHandler(e)} value={formValue.email} type='email' name='email' onChange={handleChange} required minLength={2}></input>
+                    <p className='sign__err'>{`${(emailDirty === true && checkValidEmail() === false) ? 'Пожалуйста, введите корректный Email' : ''}`}</p>
+                </div>
+                <div className='sign__container'>
+                    <h3 className='sign__name'>
+                        Пароль
+                    </h3>
+                    <input className='sign__input' onBlur={e => blurHandler(e)} value={formValue.password} type='password' name='password' onChange={handleChange} required minLength={8}></input>
+                    <p className='sign__err'>{`${(passwordDirty === true && checkValidPassword() === false) ? 'Минимальное кол-во символов - 8' : ''}`}</p>
+                </div>
+                <div className='sign__case'>
+                    <p className='sign__catch'>
+                        {catchText}
+                    </p>
+                    <button type='submit' className={isButton}>
+                        {props.button}
+                    </button>
+                </div>
+                <p className='sign__question'>
+                    {props.question}
+                    <a className='sign__link' onClick={goSign}>
+                        {props.link}
+                    </a>
                 </p>
-                <button type='submit' className={isButton}>
-                    {props.button}
-                </button>
-            </div>
-            <p className='sign__question'>
-                {props.question}
-                <a className='sign__link' onClick={goSign}>
-                    {props.link}
-                </a>
-            </p>
-        </form>
+            </form>
+            <SuccessTrue isActive={activeTrue} />
+            <SuccessFalse isActive={activeFalse} />
+        </>
     )
 }
 
