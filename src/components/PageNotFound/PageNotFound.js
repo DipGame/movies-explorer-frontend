@@ -13,8 +13,6 @@ function PageNotFound() {
     return (
         <>
             <section className='error'>
-
-
                 <button className='error__title' onClick={name}>На главную</button>
                 <img className='error__img' src={Error}></img>
             </section>

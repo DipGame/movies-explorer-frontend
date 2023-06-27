@@ -12,13 +12,14 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import Sign from '../Sign/Sign.js'
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, Navigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import threeLine from '../../images/icon__COLOR_icon-main.png';
 
 function App() {
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   function goMovies() {
     navigate('/movies', { replace: true });
@@ -33,6 +34,8 @@ function App() {
     setLoggedIn(false);
     navigate('/signin', { replace: true });
   }
+
+  console.log(window.location.pathname);
 
   const handleCardSave = (event) => {
     const card = event.currentTarget;
@@ -136,7 +139,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(loggedIn);
     handleTokenCheck();
   }, [loggedIn])
 
@@ -195,6 +197,15 @@ function App() {
       .catch((err) => console.log(err))
   }, [loggedIn, saveMovieCard])
 
+  useEffect(() => {
+    if (loggedIn && location.pathname === "/signup") {
+      navigate('/movies')
+    }
+    if (loggedIn && location.pathname === "/signin") {
+      navigate('/movies')
+    }
+  }, [loggedIn, navigate])
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="body">
@@ -233,19 +244,19 @@ function App() {
               </>
             }
             />
-            {(!loggedIn) && <Route path='/signup' element={
+            <Route path='/signup' element={
               <>
                 <Sign handleLogin={handleLogin} sign={'true'} title={'Добро Пожаловать!'} button={'Зарегистрироваться'} question={'Уже зарегистрированы? '} link={'Войти'} />
               </>
             }
-            />}
-            {(!loggedIn) && <Route path='/signin' element={
+            />
+            <Route path='/signin' element={
               <>
                 <Sign handleLogin={handleLogin} title={'Рады видеть!'} button={'Войти'} question={'Ещё не зарегистрированы? '} link={'Регистрация'} />
               </>
             }
-            />}
-            <Route path="*" element={<PageNotFound />} />
+            />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
       </div>
