@@ -1,0 +1,14 @@
+.error__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    width: 150px;
+    background: none;
+    border: none;
+    margin: 0 0 50px 0;
+}
+
+.error__title:hover {
+    cursor: pointer;
+}

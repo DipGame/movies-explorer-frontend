@@ -1,0 +1,7 @@
+@import url(../../blocks/overlay/overlay.css);
+@import url(../../blocks/overlay/_open/overlay_open.css);
+
+@import url(../../blocks/success/success.css);
+@import url(../../blocks/success/__title/success__title.css);
+@import url(../../blocks/success/__set/success__set.css);
+@import url(../../blocks/success/__lable/success__lable.css);

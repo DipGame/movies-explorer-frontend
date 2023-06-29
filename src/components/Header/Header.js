@@ -41,9 +41,9 @@ function Header(props) {
             <a className={`${props.signin ? 'header__signin' : ''}`} onClick={goSignIn} href='#'>
                 {props.signin}
             </a>
-            <h2 className={`${props.account ? 'header__account' : ''}`} onClick={goProfile} id={'myAccount'}  >
+            <NavLink to="/profile" className={`${props.account ? 'header__account' : ''}`} style={(navData) => (navData.isActive ? { backgroundColor: '#3456F3', color: 'white' } : { backgroundColor: '#F4F4F4', color: 'black' })} onClick={goProfile} id={'myAccount'}  >
                 {props.account}
-            </h2>
+            </NavLink>
             <img className={`${props.threeLine ? 'header__three' : ''}`} src={props.threeLine} alt={props.alt} onClick={props.overlay} />
         </header >
     );

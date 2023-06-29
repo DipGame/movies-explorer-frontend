@@ -1,0 +1,13 @@
+.sign__catch {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+    text-align: left;
+    width: 100%;
+    max-width: 396px;
+    position: absolute;
+    bottom: 45px;
+}

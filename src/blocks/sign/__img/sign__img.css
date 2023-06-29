@@ -1,5 +1,5 @@
-.sign__img {
-
+.sign__img:hover {
+    cursor: pointer;
 }
 
 @media (max-width: 320px) {

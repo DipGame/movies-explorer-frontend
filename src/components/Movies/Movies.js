@@ -4,7 +4,7 @@ import Header from '../Header/Header.js';
 import SearchForm from '../SearchForm/SearchForm';
 import Footer from '../Footer/Footer.js';
 import HiddenComponent from '../HiddenComponent/HiddenComponent.js';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import threeLine from '../../images/icon__COLOR_icon-main.png'
 
@@ -14,6 +14,9 @@ function Movies(props) {
 
     const [overlay, setOverlay] = useState('overlay');
     const [secret, setSecret] = useState('secret');
+    const [isActiveFindButton, setIsActiveFindButton] = useState(false);
+    const [isActiveButton, setIsActiveButton] = useState(false);
+    const [request, setRequest] = useState('');
 
     function openOverlay() {
         setOverlay('overlay overlay_open');
@@ -29,11 +32,43 @@ function Movies(props) {
         navigate('/', { replace: true });
     }
 
+    function handleClickFilter() {
+        if (isActiveButton === false) {
+            localStorage.setItem("isActiveButtonFilter", true);
+            setIsActiveButton(true);
+        } else {
+            localStorage.setItem("isActiveButtonFilter", false);
+            setIsActiveButton(false);
+        }
+    }
+
+    useEffect(() => {
+        if (localStorage.getItem("inputFindValue")?.length > 1) {
+            handleVisionMovies();
+        }
+    }, [])
+
+    function handleVisionMovies() {
+        setIsActiveFindButton(true);
+    }
+
+    function handleInputValue(value) {
+        setRequest(value);
+    }
+
+    useEffect(() => {
+        if (localStorage.getItem("isActiveButtonFilter") === 'true') {
+            setIsActiveButton(true);
+        } else {
+            setIsActiveButton(false);
+        }
+    }, [])
+
     return (
         <>
             <Header click={goHome} threeLine={threeLine} films={'Фильмы'} save={'Сохраненные фильмы'} account={'Аккаунт'} color={'#FAFAFA'} overlay={openOverlay} />
-            <SearchForm />
-            <MoviesCardList />
+            <SearchForm handleClickFilter={handleClickFilter} filterActive={isActiveButton} handleVisionMovies={handleVisionMovies} onSelectInput={handleInputValue} />
+            {isActiveFindButton && <MoviesCardList cards={props.cards} load={props.load} handleCardClick={props.handleCardClick} save={false} fliterOn={isActiveButton} request={request} />}
             <Footer />
             <HiddenComponent classOverlay={overlay} classSecret={secret} close={closeOverlay} />
         </>
